@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-@ComponentScan({"mon3goo.web.view.template"})
+@ComponentScan({"mon3goo.web"})
 @SpringBootApplication
 @Configuration
 public class TemplateApplication extends SpringBootServletInitializer {

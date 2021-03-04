@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import mon3goo.web.view.template.jpa.entities.MenuOption;
-import mon3goo.web.view.template.jpa.repositories.MenuOptionsRepo;
+import mon3goo.web.generics.jpa.entities.MenuOption;
+import mon3goo.web.generics.jpa.repositories.MenuOptionsRepo;
 
 @Controller
 public class TemplateBaseController {
@@ -40,10 +40,10 @@ public class TemplateBaseController {
 			HttpServletResponse response,Model model) throws Exception {
 
 		//fetches the horizontal navbar options
-		List<MenuOption> horizontalNavBar=menuRepo.findByDirection("h");	
+		List<MenuOption> horizontalNavBar=menuRepo.findByScopeAndDirection("home","h");	
 
 		//fetches the horizontal navbar options
-		List<MenuOption> verticalNavBar=menuRepo.findByDirection("v");
+		List<MenuOption> verticalNavBar=menuRepo.findByScopeAndDirection("home","v");
 		
 		model.addAttribute("horizontalNavBar", horizontalNavBar);
 		model.addAttribute("verticalNavBar", verticalNavBar);
